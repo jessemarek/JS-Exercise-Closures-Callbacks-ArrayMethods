@@ -211,9 +211,7 @@ function isItAnApple(arr) {
  * [2] Invoking `removeApple` with `['a', 'b', 'c' ]` will return `[ 'a', 'b', 'c' ]`.
 */
 function removeApple(arr) {
-  const newArr = arr.filter((item) => {
-    return item != "apple";
-  });
+  const newArr = arr.filter((item) => item != "apple");
 
   return newArr;
 }
@@ -234,9 +232,7 @@ function removeApple(arr) {
  * [2] Invoking `stringSmash` with `['a', 'b', 'c' ]` will return `abc`.
 */
 function stringSmash(arr) {
-  const strSmash = arr.reduce((total, item) => {
-    return total += item;
-  }, "");
+  const strSmash = arr.reduce((total, item) => total += item, "");
 
   return strSmash;
 }
@@ -259,10 +255,8 @@ function stringSmash(arr) {
 function getFullNames(arr) {
   const newArr = [];
   
-  arr.forEach((item) => {
-    newArr.push(`${item.last_name}, ${item.first_name}`);
-  });
-  
+  arr.forEach((item) => newArr.push(`${item.last_name}, ${item.first_name}`));
+
   return newArr;
 }
 
@@ -278,8 +272,10 @@ function getFullNames(arr) {
  * @returns an array with all the runners' first names in ALL CAPS.
  * The first names appear in the array in the same order the runners appear in the `runners` array.
 */
-function firstNamesAllCaps(/* CODE HERE */) {
-  /* CODE HERE */
+function firstNamesAllCaps(arr) {
+  const newArr = arr.map((item) => item.first_name.toUpperCase());
+
+  return newArr;
 }
 
 /**
@@ -296,8 +292,9 @@ function firstNamesAllCaps(/* CODE HERE */) {
  * @returns an array containing only the runners that use the given `tShirtSize`.
  * The runners in the array appear in the same order they appear in the `runners` array.
 */
-function getRunnersByTShirtSize(/* CODE HERE */) {
-  /* CODE HERE */
+function getRunnersByTShirtSize(arr, str) {
+  const newArr = arr.filter((item) => item.shirt_size === str);
+  return newArr;
 }
 
 /**
@@ -311,8 +308,9 @@ function getRunnersByTShirtSize(/* CODE HERE */) {
  * @param runners array of runners like the one inside the /data/runners.js file.
  * @returns a number which is the sum of the donations by all runners.
 */
-function tallyUpDonations(/* CODE HERE */) {
-  /* CODE HERE */
+function tallyUpDonations(arr) {
+  const donationTotal = arr.reduce((total, item) => total += item, 0);
+  return donationTotal;
 }
 
 /////////////// CLOSURES ///////////////
