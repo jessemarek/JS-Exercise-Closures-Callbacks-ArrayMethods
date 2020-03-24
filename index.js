@@ -158,7 +158,7 @@ function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS
 function lowerCaseStrings(arr) {
   const lowerCase = [];
 
-  arr.forEach( (item) => lowerCase.push( item.toLowerCase() ) );
+  arr.forEach((item) => lowerCase.push(item.toLowerCase()));
 
   return lowerCase;
 }
@@ -179,7 +179,7 @@ function lowerCaseStrings(arr) {
  * [2] Invoking `isItAnApple` with `['a', 'b', 'c' ]` will return `[ false, false, false ]`.
 */
 function isItAnApple(arr) {
-  const newArr = []; 
+  let newArr = []; 
   
   arr.map((item) => {
 
@@ -211,8 +211,11 @@ function isItAnApple(arr) {
  * [2] Invoking `removeApple` with `['a', 'b', 'c' ]` will return `[ 'a', 'b', 'c' ]`.
 */
 function removeApple(arr) {
-  const newArr = [];
+  const newArr = arr.filter((item) => {
+    return item != "apple";
+  });
 
+  return newArr;
 }
 
 /**
@@ -231,7 +234,11 @@ function removeApple(arr) {
  * [2] Invoking `stringSmash` with `['a', 'b', 'c' ]` will return `abc`.
 */
 function stringSmash(arr) {
-  
+  const strSmash = arr.reduce((total, item) => {
+    return total += item;
+  }, "");
+
+  return strSmash;
 }
 
 // A local community center is holding a fund raising 5k fun run and has invited
@@ -251,9 +258,11 @@ function stringSmash(arr) {
 */
 function getFullNames(arr) {
   const newArr = [];
+  
   arr.forEach((item) => {
     newArr.push(`${item.last_name}, ${item.first_name}`);
   });
+  
   return newArr;
 }
 
