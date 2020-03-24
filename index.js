@@ -132,8 +132,8 @@ function processProduct(num1, num2, cb) {
  * [2] Invoking `processDuplicateFree` passing `[1,1,2,2,3]` and `(arr) => arr.length`,
  * should return 3.
 */
-function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */) {
-  /* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */
+function processDuplicateFree(list, cb) {
+  
 }
 
 /////////////// HIGHER-ORDER ARRAY METHODS ///////////////
@@ -179,14 +179,11 @@ function lowerCaseStrings(arr) {
  * [2] Invoking `isItAnApple` with `['a', 'b', 'c' ]` will return `[ false, false, false ]`.
 */
 function isItAnApple(arr) {
-  let newArr = []; 
-  
-  arr.map((item) => {
-
+  const newArr = arr.map((item) => {
     if(item === "apple"){
-      newArr.push(true);
+     return true;
     }else{
-      newArr.push(false);
+      return false;
     }
   });
 
@@ -309,7 +306,7 @@ function getRunnersByTShirtSize(arr, str) {
  * @returns a number which is the sum of the donations by all runners.
 */
 function tallyUpDonations(arr) {
-  const donationTotal = arr.reduce((total, item) => total += item, 0);
+  const donationTotal = arr.reduce((total, item) => total += item.donation, 0);
   return donationTotal;
 }
 
@@ -323,10 +320,13 @@ function tallyUpDonations(arr) {
  * Study the code for counter1 and counter2. Answer the questions below.
  * 
  * 1. What is the difference between counter1 and counter2?
+ * counter 1 uses a variable declared within while counter2 uses a global variable.
  * 
  * 2. Which of the two uses a closure? How can you tell?
+ *  counter1 uses a closure. the count varibale is declared inside of the function counterMaker but is referenced by the function counter.
  * 
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
+ *  counter1 would be preferable if you want to protect the data of count from other functions. counter 2 would be better when you want multiple functions to all be able to increment the count variable and keep value cumulative.
  *
 */
 
@@ -368,8 +368,8 @@ function counter2() {
  * counter() // should return 0
  * etc
 */
-function counterMakerWithLimit(/* CODE HERE */) {
-  /* CODE HERE */
+function counterMakerWithLimit(num) {
+
 }
 
 /////////////// END OF CHALLENGE ///////////////
