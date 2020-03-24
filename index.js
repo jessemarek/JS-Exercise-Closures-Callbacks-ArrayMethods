@@ -155,12 +155,10 @@ function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS
  * 
  * [2] Invoking `lowerCaseStrings` with `['a', 'b', 'c' ]` will return `[ 'a', 'b', 'c' ]`.
 */
-function lowerCaseStrings(strings) {
-  let lowerCase = [];
+function lowerCaseStrings(arr) {
+  const lowerCase = [];
 
-  strings.forEach(function(item){
-    lowerCase.push(item.toLowerCase());
-  });
+  arr.forEach( (item) => lowerCase.push( item.toLowerCase() ) );
 
   return lowerCase;
 }
@@ -180,16 +178,20 @@ function lowerCaseStrings(strings) {
  * 
  * [2] Invoking `isItAnApple` with `['a', 'b', 'c' ]` will return `[ false, false, false ]`.
 */
-function isItAnApple(strings) {
-  const newArray = strings.map(function(item) {
+function isItAnApple(arr) {
+  const newArr = []; 
+  
+  arr.map((item) => {
+
     if(item === "apple"){
-      newArray.push(true);
-    }else {
-      newArray.push(false);
+      newArr.push(true);
+    }else{
+      newArr.push(false);
     }
   });
 
-  return newArray;
+  return newArr;
+  
 }
 
 /**
@@ -208,8 +210,9 @@ function isItAnApple(strings) {
  * 
  * [2] Invoking `removeApple` with `['a', 'b', 'c' ]` will return `[ 'a', 'b', 'c' ]`.
 */
-function removeApple(/* code here */) {
-  /* code here */
+function removeApple(arr) {
+  const newArr = [];
+
 }
 
 /**
@@ -227,8 +230,8 @@ function removeApple(/* code here */) {
  * 
  * [2] Invoking `stringSmash` with `['a', 'b', 'c' ]` will return `abc`.
 */
-function stringSmash(/* code here */) {
-  /* code here */
+function stringSmash(arr) {
+  
 }
 
 // A local community center is holding a fund raising 5k fun run and has invited
@@ -246,8 +249,12 @@ function stringSmash(/* code here */) {
  * @returns an array with all the runners' full names in the following format: "Smith, John".
  * The full names appear in the array in the same order the runners appear in the `runners` array.
 */
-function getFullNames(/* CODE HERE */) {
-  /* CODE HERE */
+function getFullNames(arr) {
+  const newArr = [];
+  arr.forEach((item) => {
+    newArr.push(`${item.last_name}, ${item.first_name}`);
+  });
+  return newArr;
 }
 
 /**
