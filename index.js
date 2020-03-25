@@ -370,14 +370,17 @@ function counter2() {
 */
 function counterMakerWithLimit(limit) {
   let myCount = 0;
-  return function counter() {
+
+  function counter() {
     if(myCount <= limit){
       return myCount++;
-    }else {
+    }
+    if(myCount > limit) {
        myCount = 0;
-       return myCount;
+       return myCount++;
     }
   }
+  return counter;
 }
 
 /////////////// END OF CHALLENGE ///////////////
