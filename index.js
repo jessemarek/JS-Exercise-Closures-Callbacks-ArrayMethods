@@ -133,7 +133,7 @@ function processProduct(num1, num2, cb) {
  * should return 3.
 */
 function processDuplicateFree(list, cb) {
-  
+  return cb(list.filter((item, index) => list.indexOf(item) === index));
 }
 
 /////////////// HIGHER-ORDER ARRAY METHODS ///////////////
@@ -368,8 +368,16 @@ function counter2() {
  * counter() // should return 0
  * etc
 */
-function counterMakerWithLimit(num) {
-
+function counterMakerWithLimit(limit) {
+  let myCount = 0;
+  return function counter() {
+    if(myCount <= limit){
+      return myCount++;
+    }else {
+       myCount = 0;
+       return myCount;
+    }
+  }
 }
 
 /////////////// END OF CHALLENGE ///////////////
